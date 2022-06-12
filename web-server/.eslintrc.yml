@@ -1,0 +1,30 @@
+# Meteor code style
+
+root: true
+
+env:
+  browser: true
+
+extends:
+  "airbnb-base"
+
+settings:
+  import/resolver: meteor
+
+rules:
+  # Prefer Boolean(x), Number(x) over !!x, +x etc.
+  "no-implicit-coercion": 2
+  # Used for upstream APIs that rely on function this
+  "func-names": "off"
+  # Prefer "foo = bar.foo" over "({ foo } = bar)" e.g to reassign let
+  "prefer-destructuring": ["error", { "AssignmentExpression": { array: false, object: false } }]
+  # Keeps destructured interface stable when expanding from single to many members
+  "import/prefer-default-export": "off"
+  # Used for conditional/isomorphic modules
+  "global-require": "off"
+  # e.g for mongo _id
+  "no-underscore-dangle": "off"
+  # Explicitly specific extensions unless package
+  "import/extensions": ["error", "ignorePackages"]
+  # Workaround for https://github.com/clayne11/eslint-import-resolver-meteor/issues/11
+  "import/no-extraneous-dependencies": "off"

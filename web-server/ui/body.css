@@ -1,0 +1,24 @@
+/* Body styles */
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 80%;
+  width: 800px;
+  margin-left: 60px;
+}
+
+body button {
+  cursor: pointer;
+}
+
+body .sensor-value {
+  color: blue;
+}
+
+body .sensor-status-okay {
+  color: green;
+}
+
+body .sensor-status-danger {
+  color: red;
+}

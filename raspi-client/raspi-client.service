@@ -1,0 +1,11 @@
+[Unit]
+Description=SIT210 Smoke Alarm Client
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python /home/pi/Desktop/raspi-client.py
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,68 @@
+<body>
+  {{#if isReady}}
+    {{!-- ## Header --}}
+    <br>
+    <h1>SIT210 Final Project: Smart Smoke Alarm</h1>
+    <h2>Rami Jarrar (Student ID 218361724)</h2>
+    <br>
+    {{!-- Last updated at --}}
+    <h2>
+      Last updated:
+      <span class="sensor-value">
+        {{#if lastReadingAt}}
+          {{formatDateRelative lastReadingAt}}
+        {{else}}
+          Never
+        {{/if}}
+      </span>
+    </h2>
+    {{!-- SMS alert contact --}}
+    <h2>
+      SMS alert contact:
+      <span class="sensor-value">0451293981</span>
+    </h2>
+
+    {{!-- Divider --}}
+    <br>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+
+    {{#if currentSensorData}}
+      {{!-- Display smoke level --}}
+      <h1>Smoke</h1>
+      <h2>Current level: <span class="sensor-value">{{currentSensorData.smoke}} ppm</span></h2>
+      <h2>Current status:
+        {{#if currentSensorData.isSmokeDanger}}
+          <span style="color: red;">Danger</span>
+        {{else}}
+          <span style="color: green;">Safe</span>
+        {{/if}}
+      </h2>
+      <br>
+      <br>
+
+      {{!-- Display carbon monoxide level --}}
+      <h1>Carbon Monoxide</h1>
+      <h2>Current level: <span class="sensor-value">{{currentSensorData.co}} ppm</span></h2>
+      <h2>Current status:
+        {{#if currentSensorData.isCoDanger}}
+          <span style="color: red;">Danger</span>
+        {{else}}
+          <span style="color: green;">Safe</span>
+        {{/if}}
+      </h2>
+    {{else}}
+      <h2>No new data available.</h2>
+      <br>
+      <h2>Check sensor is configured correctly.</h2>
+    {{/if}}
+
+    <br>
+    <br>
+  {{else}}
+    <h1>Loading...</h1>
+  {{/if}}
+</body>

@@ -1,0 +1,16 @@
+{
+  "public": {
+    "environment": "dev",
+    "smsAlertContact": "+61400000000",
+    "dangerLevel": {
+      "smoke": 30,
+      "co": 1
+    }
+  },
+  "clientApiKey": "XXXXXXXXXXXXXXXXXXXX",
+  "twilio": {
+    "authToken": "XXXXXXXXXXXXXXXXXXXX",
+    "accountSid": "ACXXXXXXXXXXXXXXXXXX",
+    "messagingServiceSid": "MGXXXXXXXXXXXXXXXXXX"
+  }
+}
